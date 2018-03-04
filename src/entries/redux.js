@@ -1,7 +1,6 @@
-// console.log("Redux.js");
+import { createStore } from 'redux';
 
 const $form = document.getElementById('form');
-
 $form.addEventListener('submit',handleSubmit);
 
 function handleSubmit(event) {
@@ -13,3 +12,24 @@ function handleSubmit(event) {
 
     console.log(title);
 }
+
+const initialState = [
+    {
+        "title":"despacito",
+    },
+    {
+        "title":"One more thing"
+    },
+    {
+        "title":"Echame la culpa"
+    },
+]
+
+const store = createStore(
+  // reducer
+  (state) => state,
+  // pre-load state
+  initialState,
+  //enhancer 
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
