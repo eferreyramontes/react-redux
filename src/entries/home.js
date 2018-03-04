@@ -4,15 +4,7 @@ import Home from '../pages/containers/home';
 import data from '../api.json';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-
-const reducer = function(state, action) {
-    switch (action.type) {
-        case 'ADD_SONG':
-            return [...state, action.payload];
-        default:
-            return state;
-    }
-}
+import reducer from '../reducers/data'
 
 const initialState = {
     data: {
