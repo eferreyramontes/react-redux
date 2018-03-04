@@ -20,6 +20,15 @@ function handleSubmit(event) {
     });
 }
 
+const reducer = function(state, action) {
+    switch (action.type) {
+        case 'ADD_SONG':
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+}
+
 const initialState = [
     {
         "title":"despacito",
@@ -34,7 +43,7 @@ const initialState = [
 
 const store = createStore(
   // reducer
-  (state) => state,
+  reducer,
   // pre-load state
   initialState,
   //enhancer 

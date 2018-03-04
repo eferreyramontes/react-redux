@@ -75,3 +75,21 @@ Bloque de información que envía datos a la aplicación.
 * Se envían usando el método dispatch() del store.
 * Son la única fuente de información del store.
 * Son objetos planos de JavaScript.
+
+### Reducers
+
+Reducer = Modifica el estado.
+
+* Es una función pura.
+* Puede haber más de un reducer en una aplicación pero solo debe haber un store.
+* Devuelve el siguiente estado.
+
+#### ¿Qué es una función pura?
+
+“Dados los mismos parámetros/argumentos/entradas deben retornar el mismo resultado, sin importar el número de veces que se llame”
+
+#### Nunca hacer en un reducer
+
+* Modificar sus argumentos
+* Realizar tareas con efectos secundarios como llamados a APIs
+* Llamar a funciones no puras como Date.now() Math.randow()
