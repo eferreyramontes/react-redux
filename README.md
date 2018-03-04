@@ -46,7 +46,7 @@ Los reduces son funciones puras que toman el estado anterior y una acción, y de
 * Los cambios se realizan con funciones puras. Una función que sea fácil de leer.
 
 ## Store
-El centro y la v erdad de todo, con métodos para actualizar, obtener y escuchar datos.
+El centro y la verdad de todo, con métodos para actualizar, obtener y escuchar datos.
 
 Datos importantes del Store:
 
@@ -58,8 +58,11 @@ Datos importantes del Store:
 
 
 >import { createStorage } from'redux'
+
 > * Reducer => Función pura que retorna el próximo estado.
+
 > * PreloadState / InitialState => Es el estado inicial de la aplicación, la primera carga, el llamado a una data. Puede ser cualquier tipo de dato.
+
 > * Enhancer => Función que puede extender redux con capacidades añadidas por librerías externas. Es opcional. Eg. Añadir las dev-tools
 
 * Reducer => Función pura que retorna el próximo estado.
