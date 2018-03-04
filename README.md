@@ -65,3 +65,13 @@ Datos importantes del Store:
 * Reducer => Función pura que retorna el próximo estado.
 * PreloadState / InitialState => Es el estado inicial de la aplicación, la primera carga, el llamado a una data. Puede ser cualquier tipo de dato.
 * Enhancer => Función que puede extender redux con capacidades añadidas por librerías externas. Es opcional. Eg. Añadir las dev-tools
+
+### Action
+
+Bloque de información que envía datos a la aplicación.
+
+#### Datos importantes:
+
+* Se envían usando el método dispatch() del store.
+* Son la única fuente de información del store.
+* Son objetos planos de JavaScript.
