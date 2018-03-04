@@ -93,3 +93,21 @@ Reducer = Modifica el estado.
 * Modificar sus argumentos
 * Realizar tareas con efectos secundarios como llamados a APIs
 * Llamar a funciones no puras como Date.now() Math.randow()
+
+## Instalando React-redux
+
+[github.com/reactjs/react-redux]
+
+Vamos a la terminal y ponemos el siguiente comando:
+
+```bash
+npm install --save react-redux
+```
+
+Una vez que termine el proceso verás en el archivo package.json la dependencia instalada.
+
+Por último corre el proyecto utilizando el siguiente comando:
+
+```bash
+npm run build:dev
+```
