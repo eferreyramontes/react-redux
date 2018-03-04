@@ -1,9 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Home from '../pages/containers/home';
-// import Playlist from './src/playlist/components/playlist';
 import data from '../api.json';
-// console.log('Hola mundo!' )
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
