@@ -99,7 +99,7 @@ Reducer = Modifica el estado.
 
 ## Instalando React-redux
 
-[github.com/reactjs/react-redux]
+[github.com/reactjs/react-redux](github.com/reactjs/react-redux)
 
 Vamos a la terminal y ponemos el siguiente comando:
 
@@ -124,3 +124,7 @@ Utilizaremos lo siguiente:
 connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]
 
 [mapStateToProps(state, [ownProps]): stateProps] Es una función en la que si el argumento está especificado el nuevo componente se suscribe para recibir actualizaciones, lo que significa que cada vez que el store es actualizado la función mapStateToProps será llamada para obtener las propiedades.
+
+### Normalizando Datos
+
+[https://github.com/paularmstrong/normalizr](https://github.com/paularmstrong/normalizr)

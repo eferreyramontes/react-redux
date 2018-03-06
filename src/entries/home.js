@@ -7,11 +7,15 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from '../reducers/data'
 
-console.log(normalizedData)
+// console.log(normalizedData)
+// console.log(data)
+console.log(normalizedData.result.categories)
 
 const initialState = {
     data: {
-        ...data,
+        // ...data,
+        entities: normalizedData.entities,
+        categories: normalizedData.result.categories
     },
     search:[]
 }
