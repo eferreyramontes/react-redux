@@ -4,13 +4,13 @@ import Home from '../pages/containers/home';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from '../reducers/index';
-
+import { Map as map} from 'immutable';
 
 const store = createStore(
   // reducer
   reducer,
   // pre-load state
-  {},
+  map(),
   //enhancer 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

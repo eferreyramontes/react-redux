@@ -2,7 +2,8 @@ import React from 'react';
 import Category from './category';
 import './categories.css';
 import Search from '../../widgets/containers/search';
-import Media from '../../playlist/components/media'
+import Media from '../../playlist/components/media';
+import { toJS } from 'redux-immutable';
 
 function Categories(props) {
   return (
@@ -10,15 +11,19 @@ function Categories(props) {
       <Search />
       {
         props.search.map((item) =>{
-          return <Media {...item} key={item.id}/>
+          // Esto no es lo óptimo. deberíamos pasar cada una de
+          // las propiedades en vez de usar toJS() porque está
+          // creando un objeto por cada elemento. 
+          // Lo ponemos a modo de ejemplo de esta función.
+          return <Media {...item.toJS()} key={item.get('id')}/>
         })
       }
       {
         props.categories.map((item) =>{
           return (
             <Category
-              key={item.id}
-              {...item}
+              key={item.get('id')}
+              {...item.toJS()}
               handleOpenModal={props.handleOpenModal}
             />
           )
