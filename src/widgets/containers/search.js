@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Search from '../components/search';
 import { connect } from 'react-redux';
 import { searchEntites } from '../../actions/index'
+import * as actions from '../../actions'
+import { bindActionCreators } from 'redux'
 
 class SearchContainer extends Component {
   state = {
@@ -10,7 +12,7 @@ class SearchContainer extends Component {
   handleSubmit = event => {
     event.preventDefault();
     // Al usar connect, dispatch se define como una props
-    this.props.dispatch(searchEntites(this.input.value));
+    this.props.actions.searchEntites(this.input.value);
   }
   setInputRef = element => {
     this.input = element;
@@ -32,5 +34,11 @@ class SearchContainer extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch),
+  }
+}
+
 // Solo los componentes inteligentes, con estados usan el Store
-export default connect()(SearchContainer);
+export default connect(null, mapDispatchToProps)(SearchContainer);

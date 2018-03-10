@@ -143,4 +143,24 @@ Resumen de métodos básicos de immutableJS sobre un mapa (objeto mapeado).
 
 
 ### Creadores de Acciones
-Empaquetamos nuestras acciones en funciones que reciben los parámetros de la acción.
+Empaquetamos nuestras acciones en funciones que reciben los parámetros de la acció<n class=""></n>
+
+### Enlazando creadores de acciones
+
+Usamos los bindActionCreators de redux
+
+```javascript
+import { bindActionCreators } from 'redux';
+```
+
+y al moment de export la función hacemos:
+
+```javascript
+export default connect(mapStateToProps, mapActionsToProps)(Search);
+```
+
+si la función no tiene mapStateToProps podemos hacer directamente lo siguiente:
+
+```javascript
+export default connect(null, mapActionsToProps)(Search);
+```
