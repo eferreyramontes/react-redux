@@ -7,6 +7,7 @@ import reducer from '../reducers/index';
 import { Map as map} from 'immutable';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 // function logger({getState, dispatch}){
 //   // Método para dispatchear el siguiente middleware
@@ -39,7 +40,10 @@ const store = createStore(
   //enhancer 
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   composeWithDevTools (
-    applyMiddleware(logger),
+    applyMiddleware(
+      logger,
+      thunk
+    )
   )
 )
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Search from '../components/search';
 import { connect } from 'react-redux';
-import { searchEntites } from '../../actions/index'
+import { searchAsyncEntites } from '../../actions/index'
 import * as actions from '../../actions'
 import { bindActionCreators } from 'redux'
 
@@ -12,7 +12,16 @@ class SearchContainer extends Component {
   handleSubmit = event => {
     event.preventDefault();
     // Al usar connect, dispatch se define como una props
-    this.props.actions.searchEntites(this.input.value);
+    this.props.actions.searchAsyncEntites(this.input.value);
+
+    // En vez de buscar entre los elementos ya pintados en la UI,
+    // podríamos hacer un fetch a nuestra API
+    // 
+    //fetch(`http://miapi.com/buscar/{this.input.value}`).then((data) => {
+    //   this.props.actions.setResultadoDeAcción(data);
+    // });
+    //
+    // Aquí puedes usar AJAX, SuperAgent
   }
   setInputRef = element => {
     this.input = element;

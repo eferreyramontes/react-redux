@@ -192,7 +192,7 @@ Es una forma de poder interceptar lo que está sucediendo con (redux) para mejor
 
 La comunidad ha colaborado con muchos middlewares. La idea es empezar a utilizarlos. Para ello puedes usar el siguiente link:
 
-```
+```bash
 https://github.com/xgrommx/awesome-redux
 ```
 
@@ -204,7 +204,18 @@ De allí vamos a tomar los siguientes:
 
 Para usar más de un middleware podemos usar lo planteado en:
 
-```
+```bash
 https://github.com/xgrommx/awesome-redux
 ```
 
+### Acciones Asíncronas
+
+Hasta ahora hemos ejecutado funciones síncronas. Esto dificulta las llamadas asíncronas.
+
+Hay dos formas básicamente:
+
+1. Usar el middleware *redux-thunk*: *https://github.com/gaearon/redux-thunk*
+
+2. Usar nuestros flujos asíncrones desde fuera de las funciones.
+
+Por ejemplo, la función de búsqueda sería una candidata para ser "asincronizada".
