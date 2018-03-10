@@ -164,3 +164,15 @@ si la función no tiene mapStateToProps podemos hacer directamente lo siguiente:
 ```javascript
 export default connect(null, mapActionsToProps)(Search);
 ```
+
+### Action Types
+
+Para no repetir los textos manuales de nuestros strings manuales que están en los reducers.
+
+```javascript
+export const OPEN_MODAL = 'OPEN_MODAL';
+
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export const SEARCH_ENTITIES = 'SEARCH_ENTITIES';
+```
