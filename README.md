@@ -140,3 +140,7 @@ Resumen de métodos básicos de immutableJS sobre un mapa (objeto mapeado).
 * mapa.set('key','valor'): Retorna un nuevo mapa donde el valor de ‘key’ ha sido remplazado por ‘valor’.
 
 * mapa.merge({key1:'valor1',key2:'valor2'}): Retorna un nuevo mapa que es el resultado de mezclar (consolidar) el mapa original y el mapa pasado por parametro como objeto.
+
+
+### Creadores de Acciones
+Empaquetamos nuestras acciones en funciones que reciben los parámetros de la acción.
