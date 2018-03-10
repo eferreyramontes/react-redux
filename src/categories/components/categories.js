@@ -15,7 +15,7 @@ function Categories(props) {
           // las propiedades en vez de usar toJS() porque está
           // creando un objeto por cada elemento. 
           // Lo ponemos a modo de ejemplo de esta función.
-          return <Media {...item.toJS()} key={item.get('id')}/>
+          return <Media openModal={props.handleOpenModal} {...item.toJS()} key={item.get('id')}/>
         })
       }
       {

@@ -10,45 +10,53 @@ import { connect } from 'react-redux';
 import { List as list } from 'immutable';
 
 class Home extends Component {
-  state = {
-    modalVisible: false,
-  }
-  handleOpenModal = (media) => {
-    this.setState({
-      modalVisible: true,
-      media
-    })
+  handleOpenModal = (id) => {
+    // this.setState({
+    //   modalVisible: true,
+    //   media
+    // })
+    this.props.dispatch({
+      'type':'OPEN_MODAL',
+      'payload': {
+        'mediaId': id,
+      }
+    });
   }
   handleCloseModal = (event) => {
-    this.setState({
-      modalVisible: false,
-    })
+    // this.setState({
+    //   modalVisible: false,
+    // })
+
+    this.props.dispatch({
+      'type': 'CLOSE_MODAL',
+    });
   }
   render() {
     return (
       <HandleError>
-      <HomeLayout>
-      <Related />
-      <Categories
-      categories={this.props.categories}
-      handleOpenModal={this.handleOpenModal}
-      search={this.props.search}
-      />
-      {
-        this.state.modalVisible &&
-        <ModalContainer>
-        <Modal
-        handleClick={this.handleCloseModal}
-        >
-        <VideoPlayer
-        autoplay
-        src={this.state.media.src}
-        title={this.state.media.title}
-        />
-        </Modal>
-        </ModalContainer>
-      }
-      </HomeLayout>
+        <HomeLayout>
+          <Related />
+          <Categories
+          categories={this.props.categories}
+          handleOpenModal={this.handleOpenModal}
+          search={this.props.search}
+          />
+          {
+            this.props.modal.get('visibility') &&
+            <ModalContainer>
+              <Modal
+                handleClick={this.handleCloseModal}
+              >
+              <VideoPlayer
+                autoplay
+                id={this.props.modal.get('mediaId')}
+                // src={this.state.media.src}
+                // title={this.state.media.title}
+              />
+              </Modal>
+            </ModalContainer>
+          }
+        </HomeLayout>
       </HandleError>
       )
   }
@@ -69,6 +77,7 @@ function mapStateToProps(state, props) {
   return {
     categories: categories,
     search: searchResults,
+    modal: state.get('modal'),
   };
 }
 

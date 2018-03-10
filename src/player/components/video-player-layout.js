@@ -10,4 +10,4 @@ const VideoPlayerLayout = (props) => (
   </div>
 )
 
-export default VideoPlayerLayout
+export default VideoPlayerLayout;
