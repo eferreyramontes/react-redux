@@ -229,3 +229,17 @@ Por ejemplo, la función de búsqueda sería una candidata para ser "asincroniza
 * Buscar elemento 
 * Hacer elementos editables en los títulos
 * reemplazar la parte de la búsqueda y poner una función para agregar
+
+## Cómo seguir con mi carrera de desarrollador react
+
+* NEXT.js
+* Redux
+* React Native
+* React Router
+* Redux-Saga
+* GraphQL
+
+### Complementar las clases con:
+
+* Normalizr
+* Inmutable
