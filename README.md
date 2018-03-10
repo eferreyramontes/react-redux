@@ -218,4 +218,14 @@ Hay dos formas básicamente:
 
 2. Usar nuestros flujos asíncrones desde fuera de las funciones.
 
-Por ejemplo, la función de búsqueda sería una candidata para ser "asincronizada".
+Por ejemplo, la función de búsqueda sería una candidata para ser "asincronizada" ya que los resultados deberían ser consultados a nuestra API.
+
+### Estados de Carga
+
+
+
+## TODOs del Curso
+
+* Buscar elemento 
+* Hacer elementos editables en los títulos
+* reemplazar la parte de la búsqueda y poner una función para agregar

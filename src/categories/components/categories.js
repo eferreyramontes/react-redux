@@ -10,6 +10,10 @@ function Categories(props) {
     <div className="Categories">
       <Search />
       {
+        props.isLoading &&
+        <p>Buscando tus videos favoritos...</p>
+      }
+      {
         props.search.map((item) =>{
           // Esto no es lo óptimo. deberíamos pasar cada una de
           // las propiedades en vez de usar toJS() porque está
