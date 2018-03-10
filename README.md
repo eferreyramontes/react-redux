@@ -180,3 +180,31 @@ export const SEARCH_ENTITIES = 'SEARCH_ENTITIES';
 
 ### Middlewares
 
+Es una forma de poder interceptar lo que está sucediendo con (redux) para mejorarlo y/o modificarlo.
+
+#### Componentes del Middleware
+
+* Recibe el dispatch y el getState como argumentos y retorna una función.
+
+* Esta función recibe el método para despachar el siguiente middleware; se espera que retorne una función que recibe action y llame a next(action)
+
+### Añadiendo múltiples Middlewares
+
+La comunidad ha colaborado con muchos middlewares. La idea es empezar a utilizarlos. Para ello puedes usar el siguiente link:
+
+```
+https://github.com/xgrommx/awesome-redux
+```
+
+De allí vamos a tomar los siguientes:
+* Logger
+* Async actions
+* reselect
+* catch-promise
+
+Para usar más de un middleware podemos usar lo planteado en:
+
+```
+https://github.com/xgrommx/awesome-redux
+```
+

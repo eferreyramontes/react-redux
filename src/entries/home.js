@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducers/index';
 import { Map as map} from 'immutable';
+import logger from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // function logger({getState, dispatch}){
 //   // Método para dispatchear el siguiente middleware
@@ -22,12 +24,12 @@ import { Map as map} from 'immutable';
 // }
 
 // Esto de arriba podría ser cambiado por:
-const logger = ({getState, dispatch}) => next => action => {
-      console.log('vamos a enviar esta acción', action);
-      const value = next(action);
-      console.log('este es mi nuevo estado', getState().toJS());
-      return value; 
-}
+// const logger = ({getState, dispatch}) => next => action => {
+//       console.log('vamos a enviar esta acción', action);
+//       const value = next(action);
+//       console.log('este es mi nuevo estado', getState().toJS());
+//       return value; 
+// }
 
 const store = createStore(
   // reducer
@@ -36,7 +38,9 @@ const store = createStore(
   map(),
   //enhancer 
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  applyMiddleware(logger)
+  composeWithDevTools (
+    applyMiddleware(logger),
+  )
 )
 
 console.log(store.getState());
