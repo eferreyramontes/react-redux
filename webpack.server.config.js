@@ -9,8 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'ssr/[name].js',
-    libraryTarget: 'commonjs2'
+    filename: 'js/[name].js',
   },
   target: 'node',
 
@@ -46,7 +45,7 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            limit: 10000,
+            limit: 1000000,
             fallback: 'file-loader',
             name: 'images/[name].[hash].[ext]',
           }
