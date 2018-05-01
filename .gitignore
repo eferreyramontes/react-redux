@@ -1,6 +1,7 @@
 # Node Modules and Mac DS Store
 node_modules
 .DS_Store
+dist/
 
 # Logs
 logs
