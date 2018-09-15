@@ -10,7 +10,6 @@ function Base(props) {
       </head>
       <body>
         <section id="home-container">
-          {props.children}
         </section>
         <section id="modal-container">
         </section>

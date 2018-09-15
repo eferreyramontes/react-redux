@@ -5,65 +5,63 @@
 
   module.exports = (env) => {
     const plugins = [
-      new ExtractTextPlugin("css/[name].css")
+    new ExtractTextPlugin("css/[name].css")
     ]
 
-      if (env.NODE_ENV === 'production') {
+    if (env.NODE_ENV === 'production') {
       plugins.push(
         new CleanWebpackPlugin(['dist'], {root: __dirname})
-      )
-      }
+        )
+    }
 
     return {
-
       entry: {
         "home": path.resolve(__dirname, 'src/entries/home.js'),
         "redux": path.resolve(__dirname, 'src/entries/redux.js'),
       },
       output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].js',
-        libraryTarget: 'commonjs2'
+        filename: 'js/[name].js'
       },
       devServer: {
         port: 9000,
       },
       module: {
         rules: [
-          {
-            test: /\.(js|jsx)$/,
-            exclude: /(node_modules)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['env', 'react', 'stage-2'],
-              }
-            },
-          },
-          {
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-              use: [
-                {
-                  loader: 'css-loader',
-                  options: {
-                    minimize: true,
-                  }
-                }
-              ]
-            })
-          },
-          {
-            test: /\.(jpg|png|gif|svg)$/,
-            use: {
-              loader: 'url-loader',
-              options: {
-                limit: 10000,
-                fallback: 'file-loader',
-                name: 'images/[name].[hash].[ext]',
-              }
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /(node_modules)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env', 'react', 'stage-2'],
             }
           },
+        },
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+              }
+            }
+            ]
+          })
+        },
+        {
+          test: /\.(jpg|png|gif|svg)$/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              fallback: 'file-loader',
+              name: 'images/[name].[hash].[ext]',
+            }
+          }
+        },
         ]
       },
       plugins

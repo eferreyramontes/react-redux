@@ -3,7 +3,7 @@ import Home from './dist/js/home';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server'
 import data from './src/api.json';
-import { Base } from './src/pages/components/base';
+import Base from './src/pages/components/base';
 
 const app = express();
 
