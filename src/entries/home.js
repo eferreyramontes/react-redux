@@ -49,14 +49,16 @@ const store = createStore(
 
 console.log(store.getState());
 
-const homeContainer = document.getElementById('home-container')
+if (typeof window !== 'undefined') {
+  const homeContainer = document.getElementById('home-container')
 
-// ReactDOM.render(que voy a renderizar, donde lo haré);
-// const holaMundo = <h1>hola Estudiante!</h1>;
+  // ReactDOM.render(que voy a renderizar, donde lo haré);
+  // const holaMundo = <h1>hola Estudiante!</h1>;
 
-render(
-    <Provider store={store}>
-        <Home />
-    </Provider>
-    ,homeContainer);
+  render(
+      <Provider store={store}>
+          <Home />
+      </Provider>
+      ,homeContainer);
+}
 
